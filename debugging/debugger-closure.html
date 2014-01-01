@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+<title>Debugger Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+#output {
+  border: 1px solid #ccc;
+  background: #eee;
+}
+</style>
+</head>
+<body>
+<h1>Test Debugger</h1>
+<p>
+When Entering an Execution Context, the Variable Environment is initialized with parameter 
+variables, Function Declarations, and Variable Statements.
+</p>
+ 
+
+<script>
+var count = 0; 
+var output = document.getElementById("output");
+
+for ( var i = 0; i < 4; i++ ) { 
+  setTimeout(function() { 
+    output.textContent += "\nCheck the value of i:" + i; 
+  }, 200); 
+}
+</script>
+
+<pre id="output">&nbsp;
+</pre>
+<p>Open the debugger and then click the button below.</p>
+<button onclick="myFunc(7)">myFunc(7)</button>
+</body>
+</html>
