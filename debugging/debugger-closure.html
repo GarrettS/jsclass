@@ -18,19 +18,21 @@ variables, Function Declarations, and Variable Statements.
  
 
 <script>
-var count = 0; 
-var output = document.getElementById("output");
+function check() {
+  var count = 0; 
+  var output = document.getElementById("output");
 
-for ( var i = 0; i < 4; i++ ) { 
-  setTimeout(function() { 
-    output.textContent += "\nCheck the value of i:" + i; 
-  }, 200); 
+  for ( var i = 0; i < 4; i++ ) { 
+    setTimeout(function() { 
+      output.textContent += "\nCheck the value of i:" + i; 
+    }, 200); 
+  }
 }
 </script>
 
 <pre id="output">&nbsp;
 </pre>
 <p>Open the debugger and then click the button below.</p>
-<button onclick="myFunc(7)">myFunc(7)</button>
+<button onclick="check()">Check the value of i</button>
 </body>
 </html>
