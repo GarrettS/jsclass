@@ -1,0 +1,49 @@
+<!doctype html>
+<head>
+<title>Debugger Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="form-utils.js"></script>
+<script> 
+var form = document.getElementById("personalform");
+
+function validateForm(form) {
+    var inputs = this.inputs;
+    validate80k(inputs.income);
+    validateForename(inputs.forename);
+    validateEmail(inputs.email);
+}
+
+</script>
+
+</head>
+<body>
+<h1>Debugging</h1>
+
+<form id="personalform" method="post" action="#" name="personalform">
+<div class="validationerrors"></div>
+<fieldset>
+<legend>Personal Details</legend>
+<p>
+<label for="forename">Please enter your forename</label>
+<input type="text" size="20" name="forename" id="forename" class="string" value="">
+</p>
+
+<div>
+<label for="income">Please enter your income level</label> 
+<select size="3" name="income" id="income">
+<option value="0">0</option>
+<option value="04">30k-40k</option>
+<option value="08">41k-80k</option>
+</div>
+
+<p>
+<label for="email">Please enter your email address</label> 
+<input type="email" size="20" name="email" id="email">
+</p>
+</fieldset>
+
+<p>
+<input type="submit" name="submit" value="Sign up">
+</p>
+</form>
+</body>
