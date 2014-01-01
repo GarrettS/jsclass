@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+<title>Debugger Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h1>Test Debugger</h1>
+<p>
+When Entering an Execution Context, the Variable Environment is initialized with parameter 
+variables, Function Declarations, and Variable Statements.
+</p>
+ 
+<pre>
+function myFunc(myParam) {
+  debugger;
+  var myVar = 1;
+ 
+  function innerFunc() {
+ 
+  }
+}
+</pre>
+ 
+<script>
+function myFunc(myParam) {
+  debugger;
+  var myVar = 1;
+ 
+  function innerFunc() {
+ 
+  }
+}
+</script>
+<p>Open the debugger and then click the button below.</p>
+<button onclick="myFunc(7)">myFunc(7)</button>
+</body>
+</html>
