@@ -1,6 +1,8 @@
 JavaScript Class
+------------------------
 
 Course Overview
+------------------------
 This course covers the fundamentals of the EcmaScript programming language, the DOM, and 
 object-oriented design. It is intended for experienced web developers and programmers of 
 other languages, however all are welcome.
