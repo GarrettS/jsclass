@@ -15,9 +15,11 @@ function myFunc(myParam) {
   debugger;
   var myVar = 1;
  
-  function innerFunc() {
- 
+  function innerFunc(a) {
+    return a++;
   }
+  
+  return myVar + innerFunc(3);
 }
 </pre>
 
@@ -26,9 +28,11 @@ function myFunc(myParam) {
   debugger;
   var myVar = 1;
  
-  function innerFunc() {
- 
+  function innerFunc(a) {
+    return a++;
   }
+  
+  return myVar + innerFunc(3);
 }
 </script>
 <p>Open the debugger and then click the button below.</p>
