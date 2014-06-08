@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- 
+Doctype to determine rendering mode.
+-->
+<html>
+<head>
+  <title>Animate Image</title>
+
+<style>
+/* 
+ CSS 2 Selectors
+ http://www.w3.org/TR/CSS2/selector.html
+*/
+#p-logo > a 
+/*, div */ {
+    background: url("NB-logo.png") no-repeat right;
+    display: block;
+    width: 131px;
+    height: 131px;
+    position: relative;
+    left: 0;
+    outline: 1px solid green;
+    transition: 2s;
+}
+
+/* for hover, and className swap in 
+ javascript
+ */
+#p-logo > a:active,
+#p-logo > a.activated {
+    outline: 100px solid red;
+    padding-left: 100px;
+    transition: all 1s;
+}
+
+#toggle {
+    position: relative;
+    top: 100px;
+}
+</style>
+</head>
+<body>
+
+<div class="portlet" id="p-logo"
+><a href="#" 
+   title="Visit the main page">a</a>
+</div>
+
+<!-- event handler, run onclick -->
+<button id="toggle">show active state</button>
+</body>
+</html>
