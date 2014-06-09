@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <title>Animate Image</title>
+
+<style>
+/* 
+ CSS 2 Selectors
+ http://www.w3.org/TR/CSS2/selector.html
+*/
+#p-logo > a 
+/*, div */ {
+    background: url("NB-logo.png") no-repeat right;
+    display: block;
+    width: 131px;
+    height: 131px;
+    position: relative;
+    left: 0;
+    outline: 1px solid green;
+    transition-property: outline, padding-left;
+    transition-duration: 1s, 2s;
+    transition-timing: ease-in-out, ease-out-in;
+}
+
+#p-logo > a.activated {
+    outline: 100px solid red;
+    padding-left: 100px;
+    transition: 1s;
+}
+
+#toggle {
+    position: relative;
+    top: 100px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="portlet" id="p-logo"
+><a href="/wiki/Noisebridge" title="Visit the main page">a</a>
+</div>
+
+
+<script> 
+
+var isActivated = false;
+function toggleActivated() {
+
+    var newClassName = isActivated ? "" : "activated";
+
+    var link = document.getElementById("p-logo")
+    .getElementsByTagName("a")[0];
+    link.className = newClassName;
+
+    isActivated = !isActivated;
+}
+
+var now = Date.now();
+function toggleToggleActivated() {
+    function loadToggle() {
+        toggleActivated();
+    }
+    if(Date.now() - now < 1000) {
+        requestAnimationFrame(toggleToggleActivated);
+    } else {
+       loadToggle();
+    }
+}
+// Run when page is loading.
+requestAnimationFrame(toggleToggleActivated);
+</script>
+
+<!-- event handler, run onclick -->
+<button id="toggle" onclick="toggleActivated()">show active state</button>
+</body>
+</html>

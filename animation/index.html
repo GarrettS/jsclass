@@ -23,7 +23,7 @@
 /* for hover, and className swap in 
  javascript
  */
-#p-logo > a:hover,
+#p-logo > a:active,
 #p-logo > a.activated
 
  {
@@ -42,7 +42,7 @@
 <body>
 
 <div class="portlet" id="p-logo"
-><a href="/wiki/Noisebridge" title="Visit the main page">a</a>
+><a href="#" title="Visit the main page">a</a>
 </div>
 
 
@@ -52,10 +52,10 @@ var isActivated = false;
 function toggleActivated() {
 	var newClassName = isActivated ? "" : "activated";
 
+// http://www.w3.org/TR/DOM-Level-2-Core/
 	var link = document.getElementById("p-logo")
 	.getElementsByTagName("a")[0];
 	link.className = newClassName;
-
 	isActivated = !isActivated;
 }
 
