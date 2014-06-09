@@ -5,7 +5,7 @@ Create either an animated, toggleable menu or a toggleable split pane.
 Complete the HTML and CSS before adding any JavaScript.
 
 Animated menu
-1. Create an animated menu list that slides out from the left side of the document. Use an unordered list (google: html4 unordered list ul).
+1. Create an animated menu list that slides out from the left side of the document. Use an unordered list. Use the w3c HTML4 reference (google: html4 unordered list ul) (and do not use any W3Schools).
 
 ```
 ++
@@ -57,7 +57,7 @@ Two properties of your choosing are animated on the list's show/hide action. Eac
 =====
 2. Split Pane
 
-Create a layout with a list on the left hand side. 
+For this assignment, you'll create a layout with a list on the left hand side. 
 
 ###Expanded view:
 
