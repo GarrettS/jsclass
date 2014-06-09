@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>SetTimeout</title>
+<style type="text/css">
+script {
+	display: block;
+	font-family: monospace;
+	white-space: pre;
+	outline: 1px dashed #eee;
+	border: 3px solid #f5f5f5;
+	background: #f7f7f7;
+	padding: 7px;
+	font-size: 19px;
+}
+</style>
+</head>
+<body>
+<script
+>var timeoutID;
+function delayedAlert() {
+  timeoutID = setTimeout(slowAlert, 2000);
+}
+
+function slowAlert() {
+  alert("That was really slow!");
+  timeoutID = window.setTimeout(slowAlert, 2000);
+}
+</script>
+<p>
+<button onclick="delayedAlert()">start it!</button>
+<button onclick="clearTimeout(timeoutID)">stop it!</button>
+</body>
+</html>
