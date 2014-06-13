@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <title>Split Pane</title>
+
+<style>
+body, html {
+    height: 100%;
+    background: #999;
+}
+
+#main-content {
+    position: relative;
+    top: 100px;
+}
+
+#split-toggle {
+    position: relative;
+    left: 30px;
+}
+
+#split-container {
+    position: relative;
+    width: 95%;
+    margin: auto;
+    border: 1px solid #ccc;
+    height: 500px;
+}
+
+#left-pane {
+    width: 300px;
+    background: #f9f9f9;
+    border-right: 1px solid #333;
+    left: 0;
+    z-index: 10;
+}
+
+.pane {
+    position: absolute;
+    height: 100%;
+    /* http://cubic-bezier.com/ */
+    transition: .7s cubic-bezier(.6, .25, .5, 1.25);
+}
+
+.split-collapsed .pane {
+    transition: .7s;
+}
+
+#right-pane {
+    width: 100%;
+    right: 0;
+    background-color: #eee;
+    border-left: 300px solid #fff;
+    box-sizing: border-box;
+}
+
+.split-collapsed #left-pane {
+    width: 0px;
+    opacity: .01;
+    color: #ccc;
+}
+
+.split-collapsed #right-pane {
+    border-left-width: 0;
+    background: #fff;
+    z-index: 10.01;
+    font-size: larger;
+}
+
+
+p {
+    margin: 12px;
+}
+
+#left-pane > ul {
+    white-space: nowrap;
+    list-style: none;
+}
+
+</style>
+</head>
+
+<body>
+<div id="main-content">
+    <button id="split-toggle">collapse</button>
+    <div id="split-container">
+        <div id="left-pane" class="pane">
+            <ul>
+                <li>item 1
+                <li>item 2
+                <li>item 3
+                <li>item 4
+            </ul>
+        </div>
+        <div id="right-pane" class="pane">
+            <p>right
+        </div>
+    </div>
+</div>
+
+<script>
+var isExpanded = true;
+document.getElementById("split-toggle").onclick = function(ev) {
+    var splitCont = document.getElementById("split-container");
+    if(isExpanded) {
+        splitCont.className = "split-collapsed";
+        this.firstChild.data = "expand";
+    } else {
+        splitCont.className = "";
+        this.firstChild.data = "collapse";
+    }
+    isExpanded = !isExpanded;
+}
+</script>
+</body>
+</html>
