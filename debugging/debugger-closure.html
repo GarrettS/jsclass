@@ -19,9 +19,11 @@ function check() {
   var output = document.getElementById("output");
 
   for ( var i = 0; i < 4; i++ ) { 
-    setTimeout(function() { 
-      output.textContent += "\nCheck the value of i:" + i; 
-    }, 200); 
+    setTimeout(function(i) { 
+      return function() {
+        output.textContent += "\nCheck the value of i:" + i; 
+      }
+    }(i), 200); 
   }
 }
 </script>

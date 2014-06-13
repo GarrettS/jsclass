@@ -10,7 +10,6 @@ function validateForm(form) {
     var inputs = this.inputs;
     validate80k(inputs.income);
     validateForename(inputs.forename);
-    validateEmail(inputs.email);
 }
 
 </script>
@@ -19,7 +18,7 @@ function validateForm(form) {
 <body>
 <h1>Debugging</h1>
 
-<form id="personalform" method="post" action="#" name="personalform">
+<form id="personalform" method="post" action="#" name="personalform" onsubmit="validateForm(this)">
 <div class="validationerrors"></div>
 <fieldset>
 <legend>Personal Details</legend>
