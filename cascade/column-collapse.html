@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <title>Collapse table column</title>
+<style>
+    .even .oddCol, .odd col{
+        visibility: collapse;
+    }
+
+    .odd .oddCol {
+        visibility: visible;
+    }
+</style>
+
+<script>
+function showEven() {
+    var table = document.getElementById("colTable");
+    table.className = "even";
+}
+
+function showOdd() {
+    var table = document.getElementById("colTable");
+    table.className = "odd";
+}
+
+function showAll() {
+    var table = document.getElementById("colTable");
+    table.className = "";
+}
+</script>
+</head>
+<body>
+<h1>Collpase table column</h1>
+<button onclick="showOdd()">Alpha</button>
+<button onclick="showEven()">Numeric</button>
+<button onclick="showAll()">All</button>
+
+<table id="colTable" class="even">
+    <col>
+    <col class="oddCol">
+    <col>
+    <col class="oddCol">
+    <col>
+    <thead>
+        <tr>
+        <th>column a</th>
+        <th>column b</th>
+        <th>column c</th>
+        <th>column d</th>
+        <th>column e</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>12345</td>  
+            <td>abcde</td>  
+            <td>22345</td>  
+            <td>cdefg</td>  
+            <td>32345</td>
+        </tr>   
+        <tr>
+            <td>12345</td>  
+            <td>abcde</td>  
+            <td>22345</td>  
+            <td>cdefg</td>  
+            <td>32345</td>
+        </tr>   
+        <tr>
+            <td>12345</td>  
+            <td>abcde</td>  
+            <td>22345</td>  
+            <td>cdefg</td>  
+            <td>32345</td>
+        </tr>   
+        <tr>
+            <td>12345</td>  
+            <td>abcde</td>  
+            <td>22345</td>  
+            <td>cdefg</td>  
+            <td>32345</td>
+        </tr>   
+        <tr>
+            <td>12345</td>  
+            <td>abcde</td>  
+            <td>22345</td>  
+            <td>cdefg</td>  
+            <td>32345</td>
+        </tr>   
+        <tr>
+            <td>12345</td>  
+            <td>abcde</td>  
+            <td>22345</td>  
+            <td>cdefg</td>  
+            <td>32345</td>
+        </tr>   
+    </tbody>
+    </table>
+    </body>
+    </html> 
