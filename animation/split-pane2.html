@@ -42,16 +42,10 @@ body, html {
     transition: .7s cubic-bezier(.6, .25, .5, 1.25);
 }
 
-.split-collapsed .pane {
-    transition: .7s;
-}
-
 #right-pane {
-    width: 100%;
     right: 0;
+    left: 300px;
     background-color: #eee;
-    border-left: 300px solid #fff;
-    box-sizing: border-box;
 }
 
 .split-collapsed #left-pane {
@@ -61,7 +55,7 @@ body, html {
 }
 
 .split-collapsed #right-pane {
-    border-left-width: 0;
+    left: 0;
     background: #fff;
     z-index: 10.01;
     font-size: larger;
