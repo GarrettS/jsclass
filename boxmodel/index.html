@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+    <title>Box Model</title>
+
+    <style>
+
+html, body {
+    height: 100%;
+}
+
+head {
+    box-sizing: border-box;
+    padding-bottom: 220px;
+    border-top: 100px solid transparent;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    height: 90%;
+    z-index: 10;
+    overflow: scroll;
+}
+
+head, style {
+    display: block;
+}
+
+style {
+    background: rgba(255, 255, 255, .3);
+    font-family: courier new, monospace;
+    white-space: pre;
+    overflow: scroll;
+    padding: 0 4px;
+    border-left: 1px solid #ddd;
+}
+label {
+    display: block;
+    margin: 7px;
+}
+
+input, select {
+    float: right;
+    display: block;
+    width: 122px;
+    padding: 0;
+    margin: 0;
+}
+
+form {
+    width: 290px;
+    font-size: 17px;
+    padding: 12px;
+}
+
+#inner {
+    background: #3af;
+    border-style: solid;
+    border-color: rgba(255, 255, 200, .5);
+    color: #000;
+}
+
+#inner b {
+    display: inline-block;
+    max-width: 100%;
+    background: #fffcf0;
+    float: right;
+
+}
+
+#outer {
+    color: green;
+    background: #fa3;
+    border-style: solid;
+    border-color: rgba(255, 255, 200, .5);
+}
+
+#floater {
+    float: right;
+    position: relative; /* make this a containing block */
+    width: 70%;
+    outline: 1px solid oldlace;
+    background: #fffaf3;
+}
+</style>
+</head>
+<body>
+
+<h1>Box Model Lab</h1>
+<div id="floater">
+    <div id="outer">#outer
+        <div id="inner">#inner <b>&lt;b&gt;</b>
+        </div>
+    </div>
+</div>
+
+<form action="#inner">
+    <fieldset><legend>#inner</legend>
+    <label>display: <input type="text" name="display"
+        ></label>
+    <label>Position: <select name="position"
+        ><option name="absolute">absolute
+        <option name="relative">relative
+        <option name="static">static
+        <option name="fixed">fixed
+        </select>
+    </label>
+
+    <label>Margin: <input type="text" name="margin"
+        ></label>
+
+    <label>borderWidth: <input type="text" name="borderWidth"
+        ></label>
+
+    <label>Padding: <input type="text" name="padding"
+        ></label>
+    <label>Width: <input type="text" name="width"
+        ></label>
+    <label>Height: <input type="text" name="height"
+        ></label>
+    <label>Top: <input type="text" name="top"
+        ></label>
+    <label>Left: <input type="text" name="left"
+        ></label>
+    <label>bottom: <input type="text" name="bottom"
+        ></label>
+    <label>right: <input type="text" name="right"
+        ></label>
+    <input type="submit">
+    </fieldset>
+</form>
+
+<form action="#outer">
+    <fieldset><legend>#outer</legend>
+    <label>display: <input type="text" name="display"
+        ></label>
+    <label>Position: <select name="position"
+        ><option name="absolute">absolute
+        <option name="relative">relative
+        <option name="static">static
+        <option name="fixed">fixed
+        </select>
+    </label>
+
+    <label>Margin: <input type="text" name="margin"
+        ></label>
+    <label>borderWidth: <input type="text" name="borderWidth"
+        ></label>
+
+    <label>Padding: <input type="text" name="padding"
+        ></label>
+    <label>Width: <input type="text" name="width"
+        ></label>
+    <label>Height: <input type="text" name="height"
+        ></label>
+    <label>Top: <input type="text" name="top"
+        ></label>
+    <label>Left: <input type="text" name="left"
+        ></label>
+    <label>bottom: <input type="text" name="bottom"
+        ></label>
+    <label>right: <input type="text" name="right"
+        ></label>
+    <input type="submit">
+    </fieldset>
+</form>
+
+<script>
+(function() {
+var forms = document.forms;
+forms[0].onsubmit = 
+  forms[1].onsubmit = function(ev) {
+    forms = null;
+    return false;
+};
+
+forms[0].onchange = forms[1].onchange = function(ev) {
+    ev.preventDefault();
+    var elements = this.elements,
+        len = elements.length,
+        element,
+        action = this.getAttribute("action").substring(1),
+        target = document.getElementById(action);
+    for(var i = 0; i < this.elements.length; i++) {
+        element = this.elements[i];
+        target.style[element.name] = element.value;
+    }
+
+    return false;
+};
+}());
+</script>
+</body>
+</html>
