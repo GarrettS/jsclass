@@ -8,53 +8,6 @@
  * CSS Box model:
  * http://www.w3.org/TR/CSS21/visuren.html
 */
-html, body {
-    height: 100%;
-}
-
-head {
-    box-sizing: border-box;
-    padding-bottom: 220px;
-    border-top: 100px solid transparent;
-    position: fixed;
-    bottom: 0;
-    right: 10px;
-    height: 90%;
-    z-index: 10;
-    overflow: scroll;
-}
-
-head, style {
-    display: block;
-}
-
-style {
-    background: rgba(255, 255, 255, .3);
-    font-family: courier new, monospace;
-    white-space: pre;
-    overflow: scroll;
-    padding: 0 4px;
-    border-left: 1px solid #ddd;
-}
-label {
-    display: block;
-    margin: 7px;
-}
-
-input, select {
-    float: right;
-    display: block;
-    width: 122px;
-    padding: 0;
-    margin: 0;
-}
-
-form {
-    width: 290px;
-    font-size: 17px;
-    padding: 12px;
-}
-
 #inner {
     background: #3af;
     border-style: solid;
@@ -84,6 +37,75 @@ form {
     outline: 1px solid oldlace;
     background: #fffaf3;
 }
+
+
+html, body {
+    height: 100%;
+}
+
+head {
+    position: absolute;
+    bottom: 10px;
+    top: 117px;
+    right: 0px;
+    z-index: 10;
+    overflow: scroll;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f9f9f9 #f3f3f3 #ddd #ccc;
+}
+
+head, style {
+    display: block;
+}
+
+style {
+    background: rgba(255, 255, 255, .3);
+    font-family: courier new, monospace;
+    white-space: pre;
+    overflow: scroll;
+    padding: 0 4px;
+}
+label {
+    display: block;
+    margin: 7px;
+    padding: 3px 1px;
+    margin: 2px;
+}
+
+label:nth-child(2n+1) {
+    border-bottom: 1px dashed #fcfcfc;
+}
+
+input, select {
+    float: right;
+    display: block;
+    width: 122px;
+    padding: 0;
+    margin: 0;
+}
+
+form {
+    width: 300px;
+    font-size: 17px;
+    padding: 12px;
+    background: #fcfcfc;
+    position: relative;
+    z-index: 20;
+    background: hsla(17, 17, 17, .2);
+}
+
+fieldset fieldset {
+    border: 1px solid #eee;
+    background: #fff;
+}
+
+form[action="#outer"] > fieldset > legend {
+    background: hsla(35, 100%, 60%, .2);
+}
+form[action="#inner"] > fieldset > legend {
+    background: hsla(205, 100%, 60%, .2);
+}
 </style>
 </head>
 <body>
@@ -100,34 +122,40 @@ form {
     <fieldset><legend>#inner</legend>
     <label>display: <input type="text" name="display"
         ></label>
-    <label>Position: <select name="position"
-        ><option value="absolute">absolute
-        <option value="relative">relative
+    <label>position: <select name="position">
         <option value="static">static
+        <option value="relative">relative
+        <option value="absolute">absolute
         <option value="fixed">fixed
         </select>
     </label>
 
-    <label>Margin: <input type="text" name="margin"
-        ></label>
+    <fieldset>
+        <legend>box model</legend>
 
+    <label>margin: <input type="text" name="margin"
+        ></label>
     <label>borderWidth: <input type="text" name="borderWidth"
         ></label>
+    <label>padding: <input type="text" name="padding"
+        ></label>
+    <label>width: <input type="text" name="width"
+        ></label>
+    <label>height: <input type="text" name="height"
+        ></label>
+    </fieldset>
 
-    <label>Padding: <input type="text" name="padding"
+    <fieldset>
+        <legend>offsets</legend>
+    <label>top: <input type="text" name="top"
         ></label>
-    <label>Width: <input type="text" name="width"
-        ></label>
-    <label>Height: <input type="text" name="height"
-        ></label>
-    <label>Top: <input type="text" name="top"
-        ></label>
-    <label>Left: <input type="text" name="left"
+    <label>left: <input type="text" name="left"
         ></label>
     <label>bottom: <input type="text" name="bottom"
         ></label>
     <label>right: <input type="text" name="right"
         ></label>
+    </fieldset>
     <input type="submit">
     </fieldset>
 </form>
@@ -136,33 +164,40 @@ form {
     <fieldset><legend>#outer</legend>
     <label>display: <input type="text" name="display"
         ></label>
-    <label>Position: <select name="position"
-        ><option value="absolute">absolute
-        <option value="relative">relative
+    <label>position: <select name="position">
         <option value="static">static
+        <option value="relative">relative
+        <option value="absolute">absolute
         <option value="fixed">fixed
         </select>
     </label>
 
-    <label>Margin: <input type="text" name="margin"
+    <fieldset>
+        <legend>box model</legend>
+
+    <label>margin: <input type="text" name="margin"
         ></label>
     <label>borderWidth: <input type="text" name="borderWidth"
         ></label>
+    <label>padding: <input type="text" name="padding"
+        ></label>
+    <label>width: <input type="text" name="width"
+        ></label>
+    <label>height: <input type="text" name="height"
+        ></label>
+    </fieldset>
 
-    <label>Padding: <input type="text" name="padding"
+    <fieldset>
+        <legend>offsets</legend>
+    <label>top: <input type="text" name="top"
         ></label>
-    <label>Width: <input type="text" name="width"
-        ></label>
-    <label>Height: <input type="text" name="height"
-        ></label>
-    <label>Top: <input type="text" name="top"
-        ></label>
-    <label>Left: <input type="text" name="left"
+    <label>left: <input type="text" name="left"
         ></label>
     <label>bottom: <input type="text" name="bottom"
         ></label>
     <label>right: <input type="text" name="right"
         ></label>
+    </fieldset>
     <input type="submit">
     </fieldset>
 </form>
@@ -171,12 +206,11 @@ form {
 (function() {
 var forms = document.forms;
 forms[0].onsubmit = 
-  forms[1].onsubmit = function(ev) {
-    forms = null;
-    return false;
-};
+  forms[1].onsubmit = updateForm;
 
-forms[0].onchange = forms[1].onchange = function(ev) {
+forms[0].onchange = forms[1].onchange = updateForm;
+
+function updateForm(ev) {
     ev.preventDefault();
     var elements = this.elements,
         len = elements.length,
@@ -188,8 +222,8 @@ forms[0].onchange = forms[1].onchange = function(ev) {
         target.style[element.name] = element.value;
     }
 
-    return false;
-};
+    forms = null;
+    return false;};
 }());
 </script>
 </body>
