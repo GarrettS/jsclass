@@ -80,7 +80,7 @@ p {
     <button id="split-toggle">collapse</button>
     <div id="split-container">
         <div id="left-pane" class="pane">
-            <ul type="i">
+            <ul>
                 <li>item 1
                 <li>item 2
                 <li>item 3
@@ -94,18 +94,20 @@ p {
 </div>
 
 <script>
-var isExpanded = true;
-document.getElementById("split-toggle").onclick = function(ev) {
-    var splitCont = document.getElementById("split-container");
-    if(isExpanded) {
-        splitCont.className = "split-collapsed";
-        this.firstChild.data = "expand";
-    } else {
-        splitCont.className = "";
-        this.firstChild.data = "collapse";
-    }
-    isExpanded = !isExpanded;
-};
+(function() {
+    var isExpanded = true;
+    document.getElementById("split-toggle").onclick = function(ev) {
+        var splitCont = document.getElementById("split-container");
+        if(isExpanded) {
+            splitCont.className = "split-collapsed";
+            this.firstChild.data = "expand";
+        } else {
+            splitCont.className = "";
+            this.firstChild.data = "collapse";
+        }
+        isExpanded = !isExpanded;
+    };
+}());
 </script>
 </body>
 </html>
