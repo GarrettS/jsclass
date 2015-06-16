@@ -1,0 +1,121 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<link rel="Index" href="../">
+<title>Toggle Class To Trigger Descendant Selector Rules</title>
+
+<style type="text/css">
+/* Make table pretty */
+table {
+  border: 1px solid #8893af;
+  background: #dfe3ff;
+  width: 530px;
+  font-family: verdana, sans-serif;
+  margin: 12px;
+  table-layout: fixed;
+}
+
+tr {
+  background: #eef6ff;
+  margin: 0;
+  padding: 0;
+}
+
+td {
+  padding: 4px;
+  transition: 2s;
+  overflow: hidden;
+  height: 27px;
+  line-height: 1.1;
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  clear: both;
+  margin: 0;
+}
+
+/* The descendant selector trick */
+.even .odd-row td, .odd tr td {
+  transition: 1s;
+  padding: 0;
+  height: 0;
+  line-height: 0;
+  margin: -1px 0;
+}
+
+.odd .odd-row td {
+  transition: 1s;
+  padding: 4px;
+  height: 27px;
+  line-height: normal;
+}
+
+.odd-row td { 
+  background: #fdfeff;
+}
+</style>
+
+<script type="text/javascript">
+function showEven() {
+   var testTable = document.getElementById("testTable");
+   testTable.className = "even";
+}
+
+function showOdd() {
+   var testTable = document.getElementById("testTable");
+   testTable.className = "odd";
+}
+
+function showAll() {
+   var testTable = document.getElementById("testTable");
+   testTable.className = "";
+}
+</script>  
+</head>
+
+<body>
+<h1>Toggle Class To Trigger Descendant Selector Rules</h1>
+<h2>Description</h2>
+<p>
+ By toggling a class name on the table, the descendant selector is applied and certain rows are shown 
+ and hidden.
+</p>
+<h2>Demonstration</h2>
+<div>
+    <button onclick="showEven()">showEven()</button>
+    <button onclick="showOdd()">showOdd()</button>
+    <button onclick="showAll()">showAll()</button>
+</div>
+
+<table id="testTable">
+    <tr>
+      <td>even row, even row, even row, even row, even row, even row <P>EVENT</td>
+    </tr>
+    <tr class="odd-row">
+      <td>odd row, odd row, odd row, odd row, odd row, odd row</td>
+    </tr>
+    <tr>
+      <td>even row, even row, even row, even row, even row, even row</td>
+    </tr>
+    <tr class="odd-row">
+      <td>odd row, odd row, odd row, odd row, odd row, odd row</td>
+    </tr>
+    <tr>
+      <td>even row, even row, even row, even row, even row, even row</td>
+    </tr>
+    <tr class="odd-row">
+      <td>odd row, odd row, odd row, odd row, odd row, odd row</td>
+    </tr>
+    <tr>
+      <td>even row, even row, even row, even row, even row, even row</td>
+    </tr>
+    <tr class="odd-row">
+      <td>odd row, odd row, odd row, odd row, odd row, odd row</td>
+    </tr>
+</table>
+</body>
+
+</html>
